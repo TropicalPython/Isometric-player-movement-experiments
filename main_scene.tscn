@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://0ye1mt21vl3g"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o3jxj"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0f027"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0f027"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3jxj"]
+albedo_color = Color(9.385496e-06, 0.9666987, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2c62f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0f027"]
+albedo_color = Color(3.080368e-06, 0.79604065, 0.9461995, 1)
+
+[node name="Main Scene" type="Node3D" unique_id=906832143]
+
+[node name="Ground" type="StaticBody3D" parent="." unique_id=1581470964]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground" unique_id=1514783516]
+transform = Transform3D(20, 0, 0, 0, 0.14, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("BoxMesh_o3jxj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground" unique_id=1336805419]
+transform = Transform3D(20, 0, 0, 0, 0.14, 0, 0, 0, 20, 0, 0, 0)
+shape = SubResource("BoxShape3D_0f027")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1973655912]
+transform = Transform3D(1, 0, 0, 0, 0.7071068, 0.7071068, 0, -0.7071068, 0.7071068, -0.028741837, 7.654585, 11.067495)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Camera3D" unique_id=1620289868]
+
+[node name="Little prism" type="RigidBody3D" parent="." unique_id=1317173875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44505286, 0, 6.154915)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Little prism" unique_id=1807401803]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_0f027")
+surface_material_override/0 = SubResource("StandardMaterial3D_o3jxj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Little prism" unique_id=931313320]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_2c62f")
+
+[node name="Big Prism" type="RigidBody3D" parent="." unique_id=1301394776]
+transform = Transform3D(2.37, 0, 0, 0, 2.37, 0, 0, 0, 2.37, -4.288313, 0, 6.154915)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Big Prism" unique_id=1345029081]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("BoxMesh_0f027")
+surface_material_override/0 = SubResource("StandardMaterial3D_0f027")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Big Prism" unique_id=1107633699]
+transform = Transform3D(0.70710677, -0.70710677, 0, 0.70710677, 0.70710677, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_2c62f")
